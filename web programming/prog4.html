@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum of N Numbers</title>
+</head>
+<body>
+    <center>
+        <h1>Finding sum of natural numbers using JavaScript</h1>
+        <button onclick="sum()">Sum</button>
+    </center>
+
+    <script>
+    function sum() {
+        let num = parseInt(prompt("Enter a number:"));
+        let total = 0;
+
+        for ( i = 1; i <= num; i++) {
+            total += i;
+        }
+
+        document.writeln("Sum of " + num + " natural numbers: " + total);
+    }
+    </script>
+</body>
+</html>

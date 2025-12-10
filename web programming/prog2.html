@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Evaluator</title>
+</head>
+<body>
+
+<h2>Math Expression Evaluator</h2>
+
+<form>
+    Enter expression:
+    <input type="text" id="expr">
+    <button type="button" onclick="evaluateExpr()">Evaluate</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function evaluateExpr() {
+    let expr = document.getElementById("expr").value;
+    try {
+        let res = eval(expr);
+        document.getElementById("result").textContent = "Result: " + res;
+    } catch {
+        document.getElementById("result").textContent = "Invalid expression";
+    }
+}
+</script>
+
+</body>
+</html>

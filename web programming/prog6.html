@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Student Information Form</title>
+</head>
+<body>
+
+<h2>Student Information</h2>
+
+<form>
+    Math: <input type="number" id="math"><br><br>
+    Science: <input type="number" id="science"><br><br>
+    English: <input type="number" id="english"><br><br>
+    <button type="button" onclick="calculate()">Calculate</button>
+</form>
+
+<h2>Result Details</h2>
+Total Marks: <input type="text" id="total"><br><br>
+Average: <input type="text" id="avg"><br><br>
+Result: <input type="text" id="res"><br><br>
+Grade: <input type="text" id="grade">
+
+<script>
+function calculate() {
+
+    let m = Number(document.getElementById("math").value);
+    let s = Number(document.getElementById("science").value);
+    let e = Number(document.getElementById("english").value);
+
+    let total = m + s + e;
+    let avg = total / 3;
+
+    let res = (m >= 35 && s >= 35 && e >= 35) ? "Pass" : "Fail";
+
+    let grade =
+        avg >= 90 ? "A+" :
+        avg >= 80 ? "A"  :
+        avg >= 70 ? "B"  :
+        avg >= 60 ? "C"  :
+        avg >= 50 ? "D"  : "F";
+
+    total = total.toFixed(2);
+    avg = avg.toFixed(2);
+
+    document.getElementById("total").value = total;
+    document.getElementById("avg").value = avg;
+    document.getElementById("res").value = res;
+    document.getElementById("grade").value = grade;
+}
+</script>
+
+</body>
+</html>

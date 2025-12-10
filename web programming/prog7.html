@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Salary</title>
+</head>
+<body>
+
+<h2>Employee Salary Calculator</h2>
+
+Name: <input id="name"><br><br>
+Number: <input id="num"><br><br>
+Basic Salary: <input id="sal" type="number" ><br><br>
+
+<button onclick="calc()">Calculate</button>
+<button onclick="resetForm()">Reset</button>
+
+<p id="out"></p>
+
+<script>
+function calc() {
+  let name = document.getElementById("name").value;
+  let num  = document.getElementById("num").value;
+  let sal  = Number(document.getElementById("sal").value);
+
+  let hra = sal * 0.40;
+  let da  = sal * 0.60;
+  let gross = sal + hra + da;
+
+  let pf  = sal * 0.13;
+  let tax = sal * 0.20;
+  let deduct = pf + tax;
+
+  let net = gross - deduct;
+
+  document.getElementById("out").innerText =
+  "Name: " + name +
+  "\nNumber: " + num +
+  "\n\nBasic: " + sal +
+  "\nHRA: " + hra +
+  "\nDA: " + da +
+  "\nGross: " + gross +
+  "\n\nPF: " + pf +
+  "\nTAX: " + tax +
+  "\nDeduction: " + deduct +
+  "\n\nNet Pay: " + net;
+}
+
+</script>
+
+</body>
+</html>

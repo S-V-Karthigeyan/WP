@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+</head>
+<body>
+
+<h2>Form Validation</h2>
+
+<form onsubmit="return validateForm()">
+    Email: <input type="text" id="email"><br><br>
+    Mobile Number: <input type="text" id="mobile"><br><br>
+    Address: <input type="text" id="textbox"><br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <br><br>
+
+    Interests:
+    <input type="checkbox" value="music"> Music
+    <input type="checkbox" value="sports"> Sports
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+function validateForm() {
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+    let address = document.getElementById("textbox").value;
+    let msg = "";
+
+    if (!email.includes("@") || !email.includes("."))
+        msg += "Enter a valid email.\n";
+
+    if (mobile.length !== 10)
+        msg += "Mobile number must be 10 digits.\n";
+
+    if (!email || !mobile || !address)
+        msg += "All fields are required.\n";
+
+    if (msg) {
+        alert(msg);
+        return false;
+    }
+    return true;
+}
+</script>
+
+</body>
+</html>
